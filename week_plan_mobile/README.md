@@ -1,17 +1,25 @@
-# week_plan_mobile
+# 📅 WeekPlan: AI-Powered Canvas Scheduler
 
-A new Flutter project.
+WeekPlan is a full-stack scheduling pipeline designed to intelligently map out college coursework. It directly integrates with the Canvas LMS API to pull active assignments, applies a custom Python-based productivity algorithm, and generates a time-blocked study schedule on a cross-platform Flutter mobile application.
 
-## Getting Started
+## 🚀 Tech Stack
+* **Frontend:** Flutter / Dart
+* **Backend:** Python / FastAPI
+* **Integration:** Canvas LMS REST API
 
-This project is a starting point for a Flutter application.
+## 📂 Project Structure
+This is a mono-repo containing both the mobile client and the API server.
+* `/week_plan_mobile` - The Flutter mobile application.
+* `/Backend` - The FastAPI Python server and scheduling algorithm.
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## 🛠️ Local Setup & Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 1. Python Backend Setup
+The backend requires Python 3.9+ and uses Uvicorn to run the FastAPI server.
+
+```bash
+cd Backend
+pip install fastapi uvicorn requests
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload

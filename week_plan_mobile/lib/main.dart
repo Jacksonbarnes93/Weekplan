@@ -4,9 +4,15 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() {
   runApp(const MyApp());
+}
+
+Future<void> main() async {
+  await dotenv.load(fileName: ".env");
+  runApp(const WeekPlanApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -93,22 +99,10 @@ class _AssignmentScreenState extends State<AssignmentScreen> {
 
       // 2. Build the massive ScheduleRequest payload
       final Map<String, dynamic> requestBody = {
-        "user_id": "student-001",
-        "week_start_date": DateTime.now()
-            .subtract(Duration(days: DateTime.now().weekday - 1))
-            .toIso8601String()
-            .split('T')[0], // This Monday
-        "timezone": "America/Denver",
-        "available_windows": [
-          {"day": "monday", "start_time": "10:00", "end_time": "22:00"},
-          {"day": "tuesday", "start_time": "10:00", "end_time": "22:00"},
-          {"day": "wednesday", "start_time": "10:00", "end_time": "22:00"},
-          {"day": "thursday", "start_time": "10:00", "end_time": "22:00"},
-          {"day": "friday", "start_time": "10:00", "end_time": "22:00"},
-        ],
-        "fixed_events": [], // Leaving blank for this test
-        "tasks": tasks,
-        "preferences": userPreferences,
+        "canvas_domain": "byui.instructure.com",
+        "access_token":
+            dotenv.env['CANVAS_API_TOKEN'], // <--- Pulls from the hidden file!
+        "lookahead_days": 14,
       };
 
       // 3. Send it to the Python Brain
