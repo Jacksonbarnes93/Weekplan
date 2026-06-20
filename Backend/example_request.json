@@ -1,0 +1,116 @@
+{
+  "user_id": "student-001",
+  "week_start_date": "2025-09-01",
+  "timezone": "America/Denver",
+
+  "available_windows": [
+    { "day": "monday",    "start_time": "10:30", "end_time": "23:00" },
+    { "day": "tuesday",   "start_time": "10:30", "end_time": "23:00" },
+    { "day": "wednesday", "start_time": "10:30", "end_time": "23:00" },
+    { "day": "thursday",  "start_time": "10:30", "end_time": "23:00" },
+    { "day": "friday",    "start_time": "10:30", "end_time": "22:00" },
+    { "day": "saturday",  "start_time": "09:00", "end_time": "20:00" },
+    { "day": "sunday",    "start_time": "12:00", "end_time": "22:00" }
+  ],
+
+  "fixed_events": [
+    {
+      "id": "cs101-mw",
+      "title": "CS 101 Lecture",
+      "event_type": "class",
+      "day": "monday",
+      "start_time": "11:00",
+      "end_time": "12:15",
+      "recurring": true
+    },
+    {
+      "id": "cs101-mw-w",
+      "title": "CS 101 Lecture",
+      "event_type": "class",
+      "day": "wednesday",
+      "start_time": "11:00",
+      "end_time": "12:15",
+      "recurring": true
+    },
+    {
+      "id": "math201-tr",
+      "title": "MATH 201",
+      "event_type": "class",
+      "day": "tuesday",
+      "start_time": "09:00",
+      "end_time": "10:15",
+      "recurring": true
+    },
+    {
+      "id": "job-shift-fri",
+      "title": "Work Shift – Coffee Shop",
+      "event_type": "job",
+      "day": "friday",
+      "start_time": "14:00",
+      "end_time": "18:00",
+      "recurring": true
+    },
+    {
+      "id": "soccer-tue",
+      "title": "Soccer Practice",
+      "event_type": "extracurricular",
+      "day": "tuesday",
+      "start_time": "17:00",
+      "end_time": "19:00",
+      "recurring": true
+    }
+  ],
+
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "CS 101 – Programming Assignment 3",
+      "task_type": "assignment",
+      "course_name": "CS 101",
+      "due_date": "2025-09-04T23:59:00-06:00",
+      "estimated_minutes": 120,
+      "difficulty": 3,
+      "max_session_minutes": 60
+    },
+    {
+      "id": "task-002",
+      "title": "MATH 201 – Problem Set 5",
+      "task_type": "assignment",
+      "course_name": "MATH 201",
+      "due_date": "2025-09-03T23:59:00-06:00",
+      "estimated_minutes": 90,
+      "difficulty": 2
+    },
+    {
+      "id": "task-003",
+      "title": "History Reading – Chapters 4 & 5",
+      "task_type": "reading",
+      "course_name": "HIST 110",
+      "due_date": "2025-09-05T09:00:00-06:00",
+      "estimated_minutes": 60,
+      "difficulty": 1,
+      "max_session_minutes": 30
+    },
+    {
+      "id": "task-004",
+      "title": "Study for CS Midterm",
+      "task_type": "study",
+      "course_name": "CS 101",
+      "due_date": "2025-09-07T10:00:00-06:00",
+      "estimated_minutes": 180,
+      "difficulty": 3,
+      "max_session_minutes": 60,
+      "notes": "Focus on recursion and data structures"
+    }
+  ],
+
+  "preferences": {
+    "energy_preference": "morning",
+    "break_between_sessions_minutes": 10,
+    "buffer_days_before_due": 1,
+    "auto_breaks": true,
+    "auto_break_interval_minutes": 60,
+    "auto_break_duration_minutes": 10,
+    "allow_overflow": false
+  }
+}
