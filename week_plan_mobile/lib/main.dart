@@ -6,10 +6,6 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
 Future<void> main() async {
   await dotenv.load(fileName: ".env");
   runApp(const WeekPlanApp());
